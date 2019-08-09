@@ -1,0 +1,45 @@
+.frame{
+    min-height: 100%;
+    .head{
+        background: #ffffff;
+        border-bottom: 1px solid #dedede;
+        padding: 0 16px;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+        .logo{
+            height: 48px;
+            flex: 1;
+            img{
+                height: 100%;
+            }
+        }
+        .dropmenu{
+            .dropmenu-list{
+                display: flex;
+                align-items: center
+            }
+        }   
+        
+    }
+    .sider{
+        width: 200px;
+        position: fixed;
+        top: 65px;
+        bottom: 0;
+        background: #ffffff;
+    }
+    .content{
+        position: fixed;
+        top:65px;
+        bottom: 16px;
+        left: 200px;
+        right: 0;
+        padding: 16px;
+        .content-main{
+            background: #ffffff;
+            margin: 16px 0 0;
+        }
+    }
+}
