@@ -1,0 +1,122 @@
+REACT
+npm install -g create-react-app
+npm install -save-dev react-app-rewired customize-cra
+npm install -save-dev less less-loader
+npm install -save antd
+npm install -save-dev babel-plugin-import
+npm install -save-dev @babel/plugin-proposal-decorators
+npm install -save react-router-dom	
+npm install -save react-loadable
+npm install -save axios
+npm install -save moment
+npm install -save xlsx
+npm install -save wangeditor
+npm install -save redux react-redux redux-thunk
+npm install -save echarts
+
+src:actions、components、reducers、routes、views、requests
+
+1、全局安装Create React App , 创建项目
+	npm install -g create-react-app  //全局安装
+	create-react-app my-app  //选择合适的目录创建你的项目，  my-app 为你的项目名称
+	cd my-app  //进入项目目录
+	
+	//package.json
+	"start": "set PORT=9000 && react-scripts start"	//改默认端口
+	
+	npm start //启动项目，会在浏览器中自动打开 http://localhost:3000/
+	npm run eject 暴露出配置文件(//第一步git add .	//第二步git commit -m "init")
+	
+2、引入 react-app-rewired 并修改 package.json 里的启动配置
+	npm install -save-dev react-app-rewired customize-cra
+	
+	//config-overrides.js(根目录下新建)
+	const { override } = require('customize-cra')
+	module.exports = override();
+	
+	//package.json
+	"start": "set PORT=9000 && react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+	
+	"main": "config-overrides.js",
+
+3、配置less
+	npm install -save-dev less less-loader
+	
+	//config-overrides.js
+	const { override , addLessLoader } = require('customize-cra')
+	addLessLoader({
+        javascriptEnabled:true
+    })
+
+4、引入antd
+	npm install -save antd
+	
+	
+	//用于按需加载组件代码和样式的 babel 插件
+	npm install -save-dev babel-plugin-import
+	
+	//config-overrides.js
+	fixBabelImports('import', {
+		libraryName: 'antd',
+		libraryDirectory: 'es',
+		style: true
+	})
+
+5、自定义主题	
+	//lessVars.js(根目录下新建)
+	module.exports = {
+		'@primary-color': '#1890ff', // 全局主色
+		'@link-color': '#1890ff', // 链接色
+		'@success-color': '#52c41a', // 成功色
+		'@warning-color': '#faad14', // 警告色
+		'@error-color': '#f5222d',// 错误色
+		'@font-size-base': '14px', // 主字号
+		'@heading-color': 'rgba(0, 0, 0, 0.85)', // 标题色
+		'@text-color': 'rgba(0, 0, 0, 0.65)',// 主文本色
+		'@text-color-secondary' : 'rgba(0, 0, 0, .45)', // 次文本色
+		'@disabled-color' : 'rgba(0, 0, 0, .25)', // 失效色
+		'@border-radius-base': '4px', // 组件/浮层圆角
+		'@border-color-base': '#d9d9d9',// 边框色
+		'@box-shadow-base': '0 2px 8px rgba(0, 0, 0, 0.15)' // 浮层阴影
+	}
+	
+	//config-overrides.js
+	const modifyVars = require('./lessVars');
+	addLessLoader({
+        javascriptEnabled:true,
+        modifyVars
+    })
+	
+6、装饰器
+	https://www.npmjs.com/		》	customize-cra 	》 	addDecoratorsLegacy
+	npm install -save-dev @babel/plugin-proposal-decorators
+
+7、规划基本页面
+	src下：actions、components、reducers、routes、views
+	
+8、配置路由
+	npm install -save react-router-dom	
+	
+9、懒加载
+	npm install -save react-loadable	
+	
+10、接口
+	配置接口	http://rap2.taobao.org/
+	src下新建目录 requests
+	安装axios
+	npm install -save axios
+	
+11、时间格式化moment.js	
+	npm install -save moment
+	
+12、导出excel
+	npm install -save xlsx
+	
+13、富文本编辑器	http://www.wangeditor.com/
+	npm install -save wangeditor	
+
+14、redux
+	npm install -save redux react-redux redux-thunk
+	
