@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from  'react-dom'
 import { HashRouter as Router, Switch, Route, Redirect  } from 'react-router-dom'
 import { ConfigProvider  } from 'antd'
-import zhCN from 'antd/es/locale/zh_CN';
+import zhCN from 'antd/es/locale/zh_CN'
 import { mainRoutes } from  './routes'
 import { Provider } from 'react-redux'
 import store from './store'

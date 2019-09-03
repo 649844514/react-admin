@@ -7,7 +7,7 @@ import { getNotificationList } from '../../actions/notification'
 import './frame.less'
 import logo from './logo.png'
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Sider } = Layout
 
 const mapState = (state) => {
     const { avatar, displayName } = state.login

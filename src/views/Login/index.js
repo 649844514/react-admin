@@ -28,6 +28,7 @@ class Login extends Component {
     }
 
     render() { 
+        console.log(this.props)
         const { getFieldDecorator } = this.props.form;
         return (  
             this.props.isLogin ? <Redirect to='/admin' /> :

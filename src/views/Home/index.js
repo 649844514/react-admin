@@ -61,18 +61,21 @@ class Home extends Component {
 
     getProjectArr = () => {
         var projectArr = [],arr = []
-        this.props.projectInfo.map(node => {
-            arr.push(node)
-            if(arr.length === 4){
-                arr.key = Math.random()
-                projectArr.push(arr)
-                arr = []
-            } 
+        if(this.props.projectInfo.length>0){
+            this.props.projectInfo.map(node => {
+                arr.push(node)
+                if(arr.length === 4){
+                    arr.key = Math.random()
+                    projectArr.push(arr)
+                    arr = []
+                }
+                return projectArr
+            })
+            var lastArr = this.props.projectInfo.slice(-(this.props.projectInfo.length%4))
+            lastArr.key = Math.random()
+            projectArr.push(lastArr)
             return projectArr
-        })
-        var lastArr = this.props.projectInfo.slice(-3)
-        lastArr.key = Math.random()
-        projectArr.push(lastArr)
+        }
         return projectArr
     }
 
@@ -167,7 +170,6 @@ class Home extends Component {
 
     render() { 
         const projectArr = this.getProjectArr()
-        
         return (
             <div className='home'>
                 <Card title='概览' bordered={false} className='top-card' >
@@ -206,7 +208,7 @@ class Home extends Component {
                                                     </Col>
                                                 )
                                             })
-                                        }
+                                        }   
                                     </Row>
                                 )
                             })

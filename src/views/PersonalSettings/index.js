@@ -1,26 +1,47 @@
-import React, { useReducer } from 'react';
-import { Card, Button } from 'antd'
+import React, { Component } from 'react'
+import { Card, Input, Button, List } from 'antd'
+import { connect }  from 'react-redux'
+import { changeInputValue } from '../../actions/personalsettings'
 
-function Settings(){
-    const ADD = 'ADD' 
-    const SUB = 'SUB'
-    const [ count, dispatch ] = useReducer((state,action)=>{
-        switch(action.type){
-            case ADD:
-                return state+1
-            case SUB:
-                return state-1
-            default:
-                return state
-        }
-    },0)
-    return (  
-        <Card title='个人设置' bordered={false} >
-            <h2>{count}</h2>
-            <Button onClick={()=>dispatch({type:ADD})}>Add</Button>
-            <Button onClick={()=>dispatch({type:SUB})}>Sub</Button>
-        </Card>
-    )
+const mapState = state => {
+    const { inputValue, list } = state.personalsettings
+    return  { inputValue, list }
+}
+
+@connect(mapState, { changeInputValue })
+class PersonalSettings extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {  }
+        this.changeValue = this.changeValue.bind(this)
+    }
+
+    changeValue = (e) => {
+        console.log(e.target.value)
+        this.props.changeInputValue(e.target.value)
+    }
+
+    render() {
+        return ( 
+            <Card title='个人设置' bordered={false}>
+                <Input 
+                    placeholder={this.props.inputValue} 
+                    style={{width:'250px'}}
+                    onChange={this.changeValue} 
+                />
+                <Button type='primary'>增加</Button>
+                <List
+                    itemLayout="horizontal"
+                    dataSource={this.props.list}
+                    renderItem={item => (
+                        <List.Item>
+                            {item}
+                        </List.Item>
+                    )}
+                />
+            </Card>
+        );
+    }
 }
  
-export default Settings;
+export default PersonalSettings;
