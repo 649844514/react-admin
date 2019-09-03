@@ -201,13 +201,26 @@ class ArticleList extends Component {
         XLSX.writeFile(wb, `articles-${this.state.offset / this.state.limited + 1}-${moment().format('YYYYMMDDHHmmss')}.xlsx`)
     }
 
+    change = ()=>{
+        window.less.modifyVars(//更换主题颜色要这么写
+            {
+                '@primary-color': '#e64e14'
+            }
+        )
+        .then(() => {console.log('success')})
+        .catch(error => {
+            console.log(error);
+        });
+
+    }
+
     componentDidMount(){   
         this.getData()
     }
 
     render() { 
         return (  
-            <Card title='文章列表' bordered={false}  extra={<Button onClick={this.toExcel}>导出excel</Button>} >
+            <Card title='文章列表' bordered={false}  extra={<div><Button onClick={this.change}>change</Button><Button onClick={this.toExcel}>导出excel</Button></div>} >
                     <Table 
                         rowKey={record => record.id }
                         columns={this.state.columns} 
