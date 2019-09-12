@@ -7,7 +7,8 @@ import {
     ArticleEdit,
     Settings,
     Notification,
-    PersonalSettings
+    PersonalSettings,
+    Personnel
 } from '../views'
 
 export const mainRoutes = [{
@@ -55,5 +56,12 @@ export const adminRoutes = [{
 },{
     pathname:'/admin/personalsettings',
     component:PersonalSettings,
+    roles:['001','002','003']
+},{
+    pathname:'/admin/personnel',
+    component:Personnel,
+    title:'人员管理',
+    icon:'user',
+    isNav:true,
     roles:['001','002','003']
 }]

@@ -1,5 +1,5 @@
 import Loadable  from 'react-loadable'
-import { Loading } from '../components'
+import { Loading } from '@/components'
 
 const Login = Loadable({
     loader:() => import('./Login'),
@@ -37,6 +37,10 @@ const PersonalSettings = Loadable({
     loader:() => import('./PersonalSettings'),
     loading:Loading
 })
+const Personnel = Loadable({
+    loader:() => import('./Personnel'),
+    loading:Loading
+})
 
 export {
     Login,
@@ -47,5 +51,6 @@ export {
     ArticleEdit,
     Settings,
     Notification,
-    PersonalSettings
+    PersonalSettings,
+    Personnel
 }

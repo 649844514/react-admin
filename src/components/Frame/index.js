@@ -21,7 +21,8 @@ const breadcrumbNameMap = {
     '/admin/article/edit':'文章编辑',
     '/admin/settings': '设置',
     '/admin/notification': '通知中心',
-    '/admin/personalsettings': '个人设置'
+    '/admin/personalsettings': '个人设置',
+    '/admin/personnel': '人员管理'    
 }
 
 @connect(mapState, { logout, getNotificationList })
@@ -133,7 +134,9 @@ class Frame extends Component {
                     </div>
                 </Header>
                 <Layout>
-                    <Sider className='sider'>
+                    <Sider 
+                        className='sider'
+                    >
                         <Menu
                             mode="inline"
                             selectedKeys={[selectedKeys]}

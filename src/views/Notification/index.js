@@ -33,9 +33,9 @@ class Notification extends Component {
                     <List
                         itemLayout="horizontal"
                         dataSource={this.props.list}
-                        pagination={{
-                            pageSize: 10
-                        }}
+                        // pagination={{
+                        //     pageSize: 10
+                        // }}
                         renderItem={item => (
                             <List.Item 
                                 extra={

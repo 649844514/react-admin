@@ -70,3 +70,19 @@ export const getArticleById = (id)=>{
 export const saveArticle = (data)=>{
     return service.post('/api/saveArticle',{data})
 }
+
+//获取待进场员工信息
+export const getPersonnelWaiting = (offset = 0, limited = 10) =>{
+    return service.post('/api/personnel/waiting',{
+        offset,
+        limited
+    })
+}
+
+//获取已进场员工信息
+export const getPersonnelAlready = (offset = 0, limited = 10) =>{
+    return service.post('/api/personnel/already',{
+        offset,
+        limited
+    })
+}

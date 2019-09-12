@@ -4,6 +4,7 @@ import E from 'wangeditor'
 import './edit.less'
 import { getArticleById, saveArticle } from '../../requests'
 import moment from  'moment'
+import less from 'less'
 
 const formItemLayout = {
     labelCol:{
@@ -95,10 +96,21 @@ class ArticleEdit extends Component {
         
     }
 
+    change = () => {
+        console.log(less)
+        less.modifyVars({
+            '@primary-color':'red'
+        })
+    }
+
     render() { 
         const { getFieldDecorator } = this.props.form
         return (  
-            <Card title='文章编辑' bordered={false} extra={<Button onClick={this.props.history.goBack}>返回</Button>}>
+            <Card 
+                title='文章编辑' 
+                bordered={false} 
+                extra={<div><Button className='article-edit-btns' onClick={this.change}>change</Button><Button onClick={this.props.history.goBack}>返回</Button></div>}
+            >
                 <Spin spinning={this.state.isLoading}>
                     <Form 
                         onSubmit={this.handleSubmit}
@@ -129,7 +141,7 @@ class ArticleEdit extends Component {
                             {getFieldDecorator('createAt', {
                                 rules: [{ required: true, message: '请选择创建时间!' }]
                             })(
-                                <DatePicker showTime placeholder="选择时间"  />
+                                <DatePicker showTime placeholder="选择时间" />
                             )}
                         </Form.Item>
                         <Form.Item  label='内容'>

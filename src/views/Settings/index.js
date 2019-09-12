@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Card } from 'antd'
 
 class Settings extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {  }
     }
     render() { 
@@ -11,7 +11,7 @@ class Settings extends Component {
             <Card title='设置' bordered={false} >
 
             </Card>
-        );
+        )
     }
 }
  
