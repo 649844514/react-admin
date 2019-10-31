@@ -1,3 +1,4 @@
+import 'core-js/stable';
 import React from 'react'
 import ReactDOM from  'react-dom'
 import { HashRouter as Router, Switch, Route, Redirect  } from 'react-router-dom'
@@ -7,7 +8,9 @@ import { mainRoutes } from  './routes'
 import { Provider } from 'react-redux'
 import store from './store'
 import App from './App'
+
 import './index.less'
+
 
 ReactDOM.render(
     <Provider store={store}>
