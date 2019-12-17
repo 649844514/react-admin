@@ -89,12 +89,12 @@ class ArticleList extends Component {
                     title: titliDisplayMap[item],
                     key: item,
                     render:(record)=>{
-                    const { amount } = record
-                    return (
-                        <Tooltip title={amount > 230 ? '超过230' : '不足230'} placement='right' >
-                            <Tag color={amount > 230 ? 'red' : 'green'}>{record.amount}</Tag>
-                        </Tooltip>
-                    )
+                        const { amount } = record
+                        return (
+                            <Tooltip title={amount > 230 ? '超过230' : '不足230'} placement='right' >
+                                <Tag color={amount > 230 ? 'red' : 'green'}>{record.amount}</Tag>
+                            </Tooltip>
+                        )
                     }
                 }
             }else if(item === 'createAt'){
@@ -102,8 +102,8 @@ class ArticleList extends Component {
                     title: titliDisplayMap[item],
                     key: item,
                     render:(record)=>{
-                    const { createAt } = record
-                    return moment(createAt).format("YYYY-MM-DD HH:mm:ss")
+                        const { createAt } = record
+                        return moment(createAt).format("YYYY-MM-DD HH:mm:ss")
                     }
                 }
             }

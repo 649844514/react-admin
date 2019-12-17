@@ -19,7 +19,7 @@ const reciveNotifications = (resp) => {
         }
     }
 }
-
+ 
 export const markNotificationAsReadById = (id) => {
     return {
         type:actionTypes.markNotificationAsReadById,

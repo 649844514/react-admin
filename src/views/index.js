@@ -41,6 +41,10 @@ const Personnel = Loadable({
     loader:() => import('./Personnel'),
     loading:Loading
 })
+const Xpphome = Loadable({
+    loader:() => import('./Xpphome'),
+    loading:Loading
+})
 
 export {
     Login,
@@ -52,5 +56,6 @@ export {
     Settings,
     Notification,
     PersonalSettings,
-    Personnel
+    Personnel,
+    Xpphome
 }

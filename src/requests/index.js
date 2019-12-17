@@ -86,3 +86,11 @@ export const getPersonnelAlready = (offset = 0, limited = 10) =>{
         limited
     })
 }
+
+//获取已进场员工信息
+export const getActiveUsers = (offset = 0, limited = 10) =>{
+    return service.post('/api/xpphome/activeUsers',{
+        offset,
+        limited
+    })
+}

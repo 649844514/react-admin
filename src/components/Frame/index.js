@@ -22,7 +22,8 @@ const breadcrumbNameMap = {
     '/admin/settings': '设置',
     '/admin/notification': '通知中心',
     '/admin/personalsettings': '个人设置',
-    '/admin/personnel': '人员管理'    
+    '/admin/personnel': '人员管理',
+    '/admin/xpphome': 'XPP首页'     
 }
 
 @connect(mapState, { logout, getNotificationList })

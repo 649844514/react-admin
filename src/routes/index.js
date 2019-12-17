@@ -8,7 +8,8 @@ import {
     Settings,
     Notification,
     PersonalSettings,
-    Personnel
+    Personnel,
+    Xpphome
 } from '../views'
 
 export const mainRoutes = [{
@@ -62,6 +63,13 @@ export const adminRoutes = [{
     component:Personnel,
     title:'人员管理',
     icon:'user',
+    isNav:true,
+    roles:['001','002','003']
+},{
+    pathname:'/admin/xpphome',
+    component:Xpphome,
+    title:'XPP首页',
+    icon:'home',
     isNav:true,
     roles:['001','002','003']
 }]
