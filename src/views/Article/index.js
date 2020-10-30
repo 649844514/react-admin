@@ -13,7 +13,7 @@ const titliDisplayMap = {
     author:'作者',
     amount:'阅读量',
     createAt:'创建时间'
-  }
+}
 
 
 
@@ -204,7 +204,7 @@ class ArticleList extends Component {
     componentDidMount(){   
         this.getData()
     }
-
+ 
     render() { 
         return (  
             <Card title='文章列表' bordered={false}  extra={<Button onClick={this.toExcel}>导出excel</Button>} >
@@ -221,7 +221,10 @@ class ArticleList extends Component {
                             showSizeChanger:true,
                             onChange:this.onPageChaneg,
                             onShowSizeChange:this.onShowSizeChange,
-                            pageSizeOptions:['10', '20', '30', '40']
+                            pageSizeOptions:['10', '20', '30', '40'],
+                            showTotal: ((total) => {
+                                return `共 ${total} 条`;
+                              })
                         }}
                     
                     />

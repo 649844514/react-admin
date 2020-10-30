@@ -3,8 +3,9 @@
  */
 
 //  从customize-cra引入一些相关的方法
+const modifyVars  = require( '@ant-design/dark-theme');
 const { override, addLessLoader, fixBabelImports, addDecoratorsLegacy, addWebpackAlias } = require('customize-cra')
-const modifyVars = require('./lessVars');
+// const modifyVars = require('./lessVars');
 const path = require('path')
 
 module.exports = override(

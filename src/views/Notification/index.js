@@ -9,6 +9,7 @@ const mapState = (state) => {
     return { isLoading, list }
 } 
 
+
 @connect(mapState, { markNotificationAsReadById, markAllNotificationsAsRead })
 class Notification extends Component {
     constructor(props) {

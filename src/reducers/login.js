@@ -2,7 +2,7 @@ import actionTypes from '../actions/actionTypes'
 
 const isLogin = Boolean(window.localStorage.getItem('authToken')) || Boolean(window.sessionStorage.getItem('authToken'))
 const userInfo = JSON.parse(window.localStorage.getItem('userInfo')) || JSON.parse(window.sessionStorage.getItem('userInfo'))
-
+ 
 const initState = {
     ...userInfo,
     isLogin,
